@@ -237,7 +237,6 @@ class Organize:
             f.write('\n### Section 1: Questions Index. \n\n')
             for i in range(len(self.QA[0])):
                 f.write('#### [Q' + str(i + 1) + ']' + '(#Q' + str(i + 1) + ')' + ':' + self.QA[0][i][0])
-                f.write('   ')
             f.write('\n\n')
             f.write('\n### Section 2: Specific Q&A. \n\n')
             for i in range(len(self.QA[0])):
