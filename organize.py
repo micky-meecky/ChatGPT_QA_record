@@ -234,7 +234,7 @@ class Organize:
         # 遍历读取QA中的内容，追加写入到md文件中
         with open(self.Md_path, 'a', encoding='utf-8') as f:
             # 添加问题索引
-            f.write('\n### Section 1: Questions Index. \n\n')
+            f.write('\n### <a name="section1"></a>' + 'Section 1: Questions Index. \n\n')
             for i in range(len(self.QA[0])):
                 f.write('#### [Q' + str(i + 1) + ']' + '(#question' + str(i + 1) + ')' + ':' + self.QA[0][i][0])
             f.write('\n\n')
@@ -243,6 +243,7 @@ class Organize:
                 # 写入问题
                 # f.write('#### Q' + str(i + 1) + ':' + self.QA[0][i][0])
                 f.write('## <a name="question' + str(i + 1) + '"></a>' + 'Q' + str(i + 1) + ':' + self.QA[0][i][0])
+                f.write('#### [return to index](#section1)')
                 # 写入回答
                 for j in range(1, len(self.QA[0][i])):
                     f.write(self.QA[0][i][j])

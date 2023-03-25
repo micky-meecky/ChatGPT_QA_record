@@ -9,7 +9,7 @@ The document is structured as follows: Section 1 provides a summary of the quest
 ## 2. Q&A
 
 
-### Section 1: Questions Index. 
+### <a name="section1"></a>Section 1: Questions Index. 
 
 #### [Q1](#question1):   为什么会提出self-attention?换句话说，他是怎么来的，是为了解决什么问题来的？
 #### [Q2](#question2):   self-attetion 的输入是什么，是什么形式的？他的输出又是什么？
@@ -37,7 +37,7 @@ The document is structured as follows: Section 1 provides a summary of the quest
 ### Section 2: Specific Q&A. 
 
 ## <a name="question1"></a>Q1:   为什么会提出self-attention?换句话说，他是怎么来的，是为了解决什么问题来的？
-
+#### [return to index](#section1)
 
 #### A1: 
    I understand that you are asking about the motivation behind the development of self-attention and what problem it was designed to solve. Here's my analysis of your understanding
@@ -49,7 +49,7 @@ In summary, self-attention was proposed to tackle the challenges of capturing lo
 
 
 ## <a name="question2"></a>Q2:   self-attetion 的输入是什么，是什么形式的？他的输出又是什么？
-
+#### [return to index](#section1)
 
 #### A2: 
    自注意力（self-attention）的输入是一个序列的向量表示，通常是由词嵌入（word embeddings）或其他类型的嵌入表示的。对于一个长度为n的序列，输入矩阵的形状是(n, d)，其中n是序列长度，d是嵌入向量的维度。
@@ -63,49 +63,49 @@ In summary, self-attention was proposed to tackle the challenges of capturing lo
 
 
 ## <a name="question3"></a>Q3:   词向量输入到self-attention之前是不是需要添加该词向量在整个序列中的位置信息？具体又是如何添加的呢？而且除了添加位置信息以外还需要做什么准备嘛？
-
+#### [return to index](#section1)
 
 #### A3: 
    在将词向量输入到self-attention之前，确实需要添加位置信息。因为Transformer模型并没有像RNN或LSTM那样的内在顺序结构，所以需要额外添加位置信息。位置编码通常通过正弦和余弦函数生成，这些函数的频率和偏移因子变化，使得模型能够捕捉不同位置间的相对关系。位置编码与词向量相加，形成一个新的输入向量。在输入自注意力层之前，不需要其他特殊的准备工作。
 
 
 ## <a name="question4"></a>Q4:   自注意力的过程中，Q，K，V到底如何理解？在计算的时候那几个查询（query）、键（key）和值（value）矩阵的时候，比如计算键矩阵K的时候，K = Wk * ai,(ai为输入词向量)，那个Wk是怎么确定的？时需要在训练过程中自己学习的吗？还是人为设置的？
-
+#### [return to index](#section1)
 
 #### A4: 
    在自注意力过程中，查询（Q）、键（K）和值（V）矩阵是从输入向量中学习的表示。它们通过训练过程中学习的权重矩阵Wq、Wk和Wv进行投影。Wq、Wk和Wv是在训练过程中自动学习的，而不是人为设置的。
 
 
 ## <a name="question5"></a>Q5:   在计算注意力权重，也就是相关性attention score 的时候，除了常用的dot product, 还有一种叫做additive是吗？还有其他方法吗？
-
+#### [return to index](#section1)
 
 #### A5: 
    计算注意力权重时，除了点积（dot product）注意力，还有加法（additive）注意力。加法注意力涉及使用一个权重矩阵将查询和键连接起来，然后通过一个激活函数（如tanh）和另一个权重向量计算分数。除此之外，还有其他注意力机制，如多头注意力（multi-head attention），它将注意力分布在多个表示空间上。
 
 
 ## <a name="question6"></a>Q6:   在自注意力的过程中计算查询矩阵和键矩阵的点积后，那个缩放因子是什么？为什么要除以一个缩放因子？而且后面还跟了个softmax，为什么要有softmax，可以换成relu吗？
-
+#### [return to index](#section1)
 
 #### A6: 
    缩放因子是点积注意力计算过程中的一个调整项。缩放因子通常为d_k的平方根，其中d_k是查询、键和值向量的维度。除以缩放因子有助于防止查询和键向量的点积值过大，导致softmax函数的梯度消失。使用softmax函数是为了将注意力权重归一化到0和1之间，使得它们表示概率分布。将softmax替换为ReLU可能不适用，因为ReLU不会将输出限制在0和1之间，无法提供概率分布。
 
 
 ## <a name="question7"></a>Q7:   最后为什么要将注意力权重矩阵与值矩阵相乘，然后再求和得到输入词向量ai对应的bi？
-
+#### [return to index](#section1)
 
 #### A7: 
    将注意力权重矩阵与值矩阵相乘并求和，是为了根据计算出的权重融合输入序列中的信息。这一步可以将输入词向量中各个位置的信息整合起来，形成新的上下文表示。
 
 
 ## <a name="question8"></a>Q8:   self-attention中的self如何理解？
-
+#### [return to index](#section1)
 
 #### A8: 
    “self”在self-attention中的含义是指在计算注意力权重时，序列中的每个元素都参与计算，包括与自身的关系。这意味着模型不仅关注序列中其他位置的信息，还关注当前位置的信息。这种自我关注机制有助于捕捉序列中长距离和短距离的依赖关系。
 
 
 ## <a name="question9"></a>Q9:   多头注意力机制中，如果说现在是词性标注任务，即一个词向量ai对应一个label,bi。此时，对于一个输入序列中的一个词向量a1来说，他通过产生不同的空间表示，产生多个输出向量b11,b12, ... ,b1n, 请问最后怎么将b11,b12, ... ,b1n合成一个最终的a1对应的通过多头注意力模块输出的b1向量呢？
-
+#### [return to index](#section1)
 
 #### A9: 
    在多头注意力机制中，一个输入向量可以生成多个输出向量，每个输出向量都对应一个不同的注意力头，而最终的输出向量需要将所有头的输出向量合并起来。
@@ -130,7 +130,7 @@ b1 = softmax(h1)
 
 
 ## <a name="question10"></a>Q10:   为什么要通过一个全连接层将这个矩阵映射到一个新的向量，然后再将这个向量进行归一化得到最终的输出向量b1。具体来说，可以将这个矩阵乘以一个权重矩阵W，并加上一个偏置向量b，然后使用激活函数（比如ReLU）来对结果进行非线性变换呢？
-
+#### [return to index](#section1)
 
 #### A10: 
    在多头注意力机制中，每个注意力头都会生成一个输出向量，因此会产生多个输出向量，需要将这些输出向量合并成一个最终的输出向量，用于表示输入向量的语义信息。为了将这些输出向量合并起来，并保留每个输出向量的重要信息，通常需要使用一个全连接层对这些向量进行变换和压缩。
@@ -151,7 +151,7 @@ b1 = softmax(h1)
 
 
 ## <a name="question11"></a>Q11:   你说：“h1 = W[b11; b12; ...; b1n] + b 其中“;”表示向量的连接操作”，请问这里的连接操作通常有哪些？
-
+#### [return to index](#section1)
 
 #### A11: 
    在向量计算中，连接操作通常有两种方式：垂直连接和水平连接。
@@ -180,7 +180,7 @@ h1 = W * B + b
 
 
 ## <a name="question12"></a>Q12:   那多头注意力机制的参数量岂不是自注意力机制的参数量的n倍吗？参数量随着头的数量线性增长的，是吗？
-
+#### [return to index](#section1)
 
 #### A12: 
    是的，多头注意力机制的参数量确实是自注意力机制的参数量的n倍，其中n是头的数量。
@@ -193,7 +193,7 @@ h1 = W * B + b
 
 
 ## <a name="question13"></a>Q13:   那多头注意力机制相比于原始自注意力机制的优势在哪里？
-
+#### [return to index](#section1)
 
 #### A13: 
    多头注意力机制相比于原始自注意力机制的优势主要体现在以下几个方面：
@@ -210,7 +210,7 @@ h1 = W * B + b
 
 
 ## <a name="question14"></a>Q14:   那在自注意力机制中，我们的那三个矩阵, 也就是查询，键，和值矩阵，在训练过程中初始化的时候是怎么初始化的？那在多头注意力机制中呢？
-
+#### [return to index](#section1)
 
 #### A14: 
    在自注意力机制中，查询、键和值矩阵的初始化通常采用随机初始化的方式，即使用随机数生成器生成一些服从高斯分布或均匀分布的随机数，并将它们作为权重矩阵的初始值。这些权重矩阵会在模型的训练过程中不断更新，以使得模型可以更好地拟合训练数据。
@@ -221,7 +221,7 @@ h1 = W * B + b
 
 
 ## <a name="question15"></a>Q15:   有没有可以用预训练的一些矩阵做特定任务的fine-tuning？
-
+#### [return to index](#section1)
 
 #### A15: 
    是的，可以使用预训练的矩阵进行fine-tuning，以适应特定的任务。
@@ -234,7 +234,7 @@ h1 = W * B + b
 
 
 ## <a name="question16"></a>Q16:   multi-label和multi-class的区别是什么?
-
+#### [return to index](#section1)
 
 #### A16: 
    multi-label和multi-class是分类问题中的两个重要概念，它们的区别如下：
@@ -251,7 +251,7 @@ h1 = W * B + b
 
 
 ## <a name="question17"></a>Q17:   什么是cross attention？
-
+#### [return to index](#section1)
 
 #### A17: 
    Cross attention（交叉注意力）是一种注意力机制，允许模型在两个不同的序列之间建立关联。在自注意力（self-attention）中，模型关注的是同一个序列内各个元素之间的关系。而在交叉注意力中，模型关注的是两个不同序列中的元素之间的关系。
@@ -269,14 +269,14 @@ h1 = W * B + b
 
 
 ## <a name="question18"></a>Q18:   什么是teacher facing?
-
+#### [return to index](#section1)
 
 #### A18: 
    Teacher forcing是一种训练序列到序列模型的方法。在训练过程中，模型需要预测目标序列。在没有使用teacher forcing的情况下，模型会使用自己预测的输出作为解码器的输入。而使用teacher forcing时，不管模型预测正确与否，都将真实的目标序列作为解码器的输入。这样做可以加速训练过程并提高模型稳定性，但可能导致训练和生成过程的不一致（Exposure Bias）。为解决这个问题，可以采用概率性的teacher forcing，即以一定概率使用真实目标序列作为输入，以一定概率使用模型的预测作为输入。这种策略允许模型在训练过程中逐渐适应自己的预测。
 
 
 ## <a name="question19"></a>Q19:   请详细解释什么是layer normalization。并解释它与batch normalization的区别以及在transformer中谁更好，以及好的原因。
-
+#### [return to index](#section1)
 
 #### A19: 
    Layer normalization（层归一化）是一种归一化技术，用于加速神经网络的训练过程并提高模型的泛化能力。它通过在单个数据样本内，沿着特征维度计算均值和方差，然后对特征进行归一化。具体来说，Layer normalization的计算过程如下：
@@ -298,7 +298,7 @@ h1 = W * B + b
 
 
 ## <a name="question20"></a>Q20:   还是不太懂layer normalization， 举个简单的例子说明这个句话吧：”它通过在单个数据样本内，沿着特征维度计算均值和方差，然后对特征进行归一化。”
-
+#### [return to index](#section1)
 
 #### A20: 
    当然，让我们用一个简单的例子来解释Layer normalization。假设我们有一个单层神经网络，输入特征向量 x = [x1, x2, x3]，经过神经网络后得到输出特征向量 y = [y1, y2, y3]。注意这里我们只有一个数据样本。
