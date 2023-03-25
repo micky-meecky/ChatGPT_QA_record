@@ -1,4 +1,4 @@
-# ChatGPT Q&A Record
+# Title
 
 ## 1. Introduction
 
