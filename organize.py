@@ -221,21 +221,28 @@ class Organize:
                 # 向文件中写入标题
                 f.write('# ChatGPT Q&A Record\n\n')
                 # 写入小标题
-                f.write('## 1. Introduction\n\n')
-                f.write('The purpose of this document is to provide a comprehensive overview of the'
+                f.write('\n## 1. Introduction\n\n')
+                f.write('   The purpose of this document is to provide a comprehensive overview of the'
                         'questions and answers on the ChatGPT. \n'
                         'The document is structured as follows: Section 1 provides a '
                         'summary of the questions and answers.'
+                        'Section 2 provides the specific questions and answers. '
                         'The document concludes with a list of references used to prepare this summary.'
                         '\n\n')
                 f.write('## 2. Q&A\n\n')
-                f.write('### Section 1. \n\n')
 
         # 遍历读取QA中的内容，追加写入到md文件中
         with open(self.Md_path, 'a', encoding='utf-8') as f:
+            # 添加问题索引
+            f.write('\n### **Section 1: Questions Index.** \n\n')
+            for i in range(len(self.QA[0])):
+                f.write('#### Q' + str(i + 1) + ': ' + self.QA[0][i][0])
+                f.write('   ')
+            f.write('\n\n')
+            f.write('\n### Section 2: Specific **Q&A** . \n\n')
             for i in range(len(self.QA[0])):
                 # 写入问题
-                f.write('#### Q' + str(i + 1) + ': \n' + self.QA[0][i][0])
+                f.write('#### Q' + str(i + 1) + ':' + self.QA[0][i][0])
                 # 写入回答
                 for j in range(1, len(self.QA[0][i])):
                     f.write(self.QA[0][i][j])
@@ -245,6 +252,7 @@ class Organize:
                 for j in range(1, len(self.QA[1][i])):
                     f.write(self.QA[1][i][j])
                 f.write('\n\n')
+
 
         # 最后将md文件复制一份到readme.md中
         shutil.copy(self.Md_path, self.readme_path)

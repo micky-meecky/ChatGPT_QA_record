@@ -1,15 +1,17 @@
 # ChatGPT Q&A Record
 
+## 
 
-## 1. Introduction
+1. Introduction
 
    The purpose of this document is to provide a comprehensive overview of thequestions and answers on the ChatGPT. 
 The document is structured as follows: Section 1 provides a summary of the questions and answers.Section 2 provides the specific questions and answers. The document concludes with a list of references used to prepare this summary.
 
 ## 2. Q&A
 
+### 
 
-### **Section 1: Questions Index.** 
+Section 1: Questions Index. 
 
 #### Q1:    为什么会提出self-attention?换句话说，他是怎么来的，是为了解决什么问题来的？
    #### Q2:    self-attetion 的输入是什么，是什么形式的？他的输出又是什么？
@@ -32,7 +34,6 @@ The document is structured as follows: Section 1 provides a summary of the quest
    #### Q19:    请详细解释什么是layer normalization。并解释它与batch normalization的区别以及在transformer中谁更好，以及好的原因。
    #### Q20:    还是不太懂layer normalization， 举个简单的例子说明这个句话吧：”它通过在单个数据样本内，沿着特征维度计算均值和方差，然后对特征进行归一化。”
    
-
 
 ### Section 2: Specific **Q&A** . 
 

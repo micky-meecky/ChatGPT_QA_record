@@ -9,7 +9,7 @@ The document is structured as follows: Section 1 provides a summary of the quest
 ## 2. Q&A
 
 
-### **Section 1: Questions Index.** 
+### Section 1: Questions Index. 
 
 #### Q1:    为什么会提出self-attention?换句话说，他是怎么来的，是为了解决什么问题来的？
    #### Q2:    self-attetion 的输入是什么，是什么形式的？他的输出又是什么？
