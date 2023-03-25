@@ -11,6 +11,7 @@ class Organize:
         self.file = None
         self.path = config.path
         self.Md_path = config.Md_path
+        self.readme_path = config.readme_path
         self.Qnum = 0
         self.Anum = 0
         self.QAnum = 0
@@ -99,7 +100,7 @@ class Organize:
                 # 去除开头的Q/A+数字+;
                 line = line.split(':')[1]
                 # 在line的开头加三个空格，作为缩进
-                line = '   ' + line
+                line = '  ' + line
                 if backline1.startswith('A'):  # 说明此时的line是问题行的最后一行
                     # 说明此时的line是问题行的最后一行
                     subQ.append(line)
@@ -121,7 +122,7 @@ class Organize:
                 # 去除开头的Q/A+数字+;+空格
                 line = line.split(':')[1]
                 # 在line的开头加三个空格，作为缩进
-                line = '   ' + line
+                line = '  ' + line
                 if backline1 == '\n' and backline2 == '\n':
                     # 说明此时的line是回答行的最后一行
                     subA.append(line)
@@ -245,12 +246,16 @@ class Organize:
                     f.write(self.QA[1][i][j])
                 f.write('\n\n')
 
+        # 最后将md文件复制一份到readme.md中
+        shutil.copy(self.Md_path, self.readme_path)
+
 # 设置参数parser
 def parse_args():
     parser = argparse.ArgumentParser(description="organize")
     parser.add_argument('--path', type=str, default='./self-attention.txt')
     parser.add_argument('--TallyUpNum', type=bool, default=True, help='统计问题和回答数吗？')
-    parser.add_argument('--Md_path', type=str, default='./self_attention.md', help='md文件路径')
+    parser.add_argument('--Md_path', type=str, default='./self_attention.md', help='self_attention.md文件路径')
+    parser.add_argument('--readme_path', type=str, default='./readme.md', help='readme.md文件路径')
     return parser.parse_args()
 
 
