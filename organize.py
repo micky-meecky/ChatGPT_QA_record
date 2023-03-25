@@ -219,7 +219,7 @@ class Organize:
             # 创建一个新的md文件
             with open(self.Md_path, 'w', encoding='utf-8') as f:
                 # 向文件中写入标题
-                f.write('# Title\n\n')
+                f.write('# ChatGPT Q&A Record\n\n')
                 # 写入小标题
                 f.write('## 1. Introduction\n\n')
                 f.write('The purpose of this document is to provide a comprehensive overview of the'
