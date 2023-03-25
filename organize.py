@@ -243,7 +243,7 @@ class Organize:
             for i in range(len(self.QA[0])):
                 # 写入问题
                 # f.write('#### Q' + str(i + 1) + ':' + self.QA[0][i][0])
-                f.write('#### <a name = "_Q' + str(i + 1) + '"></a>' + 'Q' + str(i + 1) + ':' + self.QA[0][i][0])
+                f.write('#### <a name = "Q' + str(i + 1) + '"></a>' + 'Q' + str(i + 1) + ':' + self.QA[0][i][0])
                 # 写入回答
                 for j in range(1, len(self.QA[0][i])):
                     f.write(self.QA[0][i][j])
