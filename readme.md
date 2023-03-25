@@ -12,7 +12,7 @@ The document is structured as follows: Section 1 provides a summary of the quest
 ### **Section 1: Questions Index.** 
 
 #### Q1:    为什么会提出self-attention?换句话说，他是怎么来的，是为了解决什么问题来的？
-   #### Q2:    self-attetion 的输入是什么，是什么形式的？他的输出又是什么？
+   #### <a name = "Q1"></a>Q2:    self-attetion 的输入是什么，是什么形式的？他的输出又是什么？
    #### Q3:    词向量输入到self-attention之前是不是需要添加该词向量在整个序列中的位置信息？具体又是如何添加的呢？而且除了添加位置信息以外还需要做什么准备嘛？
    #### Q4:    自注意力的过程中，Q，K，V到底如何理解？在计算的时候那几个查询（query）、键（key）和值（value）矩阵的时候，比如计算键矩阵K的时候，K = Wk * ai,(ai为输入词向量)，那个Wk是怎么确定的？时需要在训练过程中自己学习的吗？还是人为设置的？
    #### Q5:    在计算注意力权重，也就是相关性attention score 的时候，除了常用的dot product, 还有一种叫做additive是吗？还有其他方法吗？
@@ -36,7 +36,7 @@ The document is structured as follows: Section 1 provides a summary of the quest
 
 ### Section 2: Specific **Q&A** . 
 
-#### Q1:   为什么会提出self-attention?换句话说，他是怎么来的，是为了解决什么问题来的？
+#### [Q1:](#Q1)   为什么会提出self-attention?换句话说，他是怎么来的，是为了解决什么问题来的？
 
 
 #### A1: 
@@ -148,7 +148,6 @@ h1 = W[b11; b12; ...; b1n] + b
 b1 = softmax(h1)
 
 这样就可以得到一个经过多头注意力机制处理后的最终输出向量b1，用于表示输入向量的语义信息。
-
 
 #### Q11:   你说：“h1 = W[b11; b12; ...; b1n] + b 其中“;”表示向量的连接操作”，请问这里的连接操作通常有哪些？
 
