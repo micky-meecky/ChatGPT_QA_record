@@ -12,6 +12,7 @@ class Organize:
         self.path = config.path
         self.Md_path = config.Md_path
         self.readme_path = config.readme_path
+        self.readme_flag = config.readme_flag
         self.Qnum = 0
         self.Anum = 0
         self.QAnum = 0
@@ -257,15 +258,17 @@ class Organize:
 
 
         # 最后将md文件复制一份到readme.md中
-        shutil.copy(self.Md_path, self.readme_path)
+        if self.readme_flag:
+            shutil.copy(self.Md_path, self.readme_path)
 
 # 设置参数parser
 def parse_args():
     parser = argparse.ArgumentParser(description="organize")
-    parser.add_argument('--path', type=str, default='./self-attention.txt')
+    parser.add_argument('--path', type=str, default='./english_sentence_maker.txt')
     parser.add_argument('--TallyUpNum', type=bool, default=True, help='统计问题和回答数吗？')
-    parser.add_argument('--Md_path', type=str, default='./self_attention.md', help='self_attention.md文件路径')
+    parser.add_argument('--Md_path', type=str, default='./english_sentence_maker.md', help='self_attention.md文件路径')
     parser.add_argument('--readme_path', type=str, default='./readme.md', help='readme.md文件路径')
+    parser.add_argument('--readme_flag', type=bool, default=False, help='是否将md文件复制到readme.md中？')
     return parser.parse_args()
 
 
