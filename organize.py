@@ -106,12 +106,12 @@ class Organize:
                 if '{' in line:
                     line = line.replace('{', ' ')
                 if '}' in line:
-                    line = line.replace('}', ' ')
+                    line = line.replace('}', '.')
                 if ':' in line:
                     line = line.replace(':', ' ')
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
                 if 'style' in line:
-                    line = line.replace('style', 'story-style')
+                    line = line.replace('style', 'Storys')
 
                 if backline1.startswith('A'):  # 说明此时的line是问题行的最后一行
                     # 说明此时的line是问题行的最后一行
@@ -140,7 +140,7 @@ class Organize:
                 if '{' in line:
                     line = line.replace('{', ' ')
                 if '}' in line:
-                    line = line.replace('}', ' ')
+                    line = line.replace('}', '.')
                 if ':' in line:
                     line = line.replace(':', ' ')
 
@@ -168,7 +168,7 @@ class Organize:
                 if '{' in line:
                     line = line.replace('{', ' ')
                 if '}' in line:
-                    line = line.replace('}', ' ')
+                    line = line.replace('}', '.')
                 if ':' in line:
                     line = line.replace(':', ' ')
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
