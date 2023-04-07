@@ -107,6 +107,8 @@ class Organize:
                     line = line.replace('{', ' ')
                 if '}' in line:
                     line = line.replace('}', ' ')
+                if ':' in line:
+                    line = line.replace(':', ' ')
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
                 if 'style' in line:
                     line = line.replace('style', 'story-style')
@@ -134,11 +136,14 @@ class Organize:
                 # 在line的开头加三个空格，作为缩进
                 line = '  ' + line
                 # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
+
                 if '{' in line:
                     line = line.replace('{', ' ')
-
                 if '}' in line:
                     line = line.replace('}', ' ')
+                if ':' in line:
+                    line = line.replace(':', ' ')
+
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
                 if 'style' in line:
                     line = line.replace('style', 'story-style')
@@ -164,6 +169,8 @@ class Organize:
                     line = line.replace('{', ' ')
                 if '}' in line:
                     line = line.replace('}', ' ')
+                if ':' in line:
+                    line = line.replace(':', ' ')
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
                 if 'style' in line:
                     line = line.replace('style', 'story-style')
