@@ -160,9 +160,9 @@ class Organize:
             else:
                 # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
                 if '{' in line:
-                    line = line.replace('{', '[')
+                    line = line.replace('{', '\"')
                 if '}' in line:
-                    line = line.replace('}', ']')
+                    line = line.replace('}', '\"')
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
                 if 'style' in line:
                     line = line.replace('style', 'story-style')
