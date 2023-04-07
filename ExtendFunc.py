@@ -453,6 +453,7 @@ class ExceptAIandEnglishSentenceMaker:
                     f.write('### Q' + str(i + 1) + ': \n')
                     for j in range(len(self.QLines[i])):
                         f.write(self.QLines[i][j])  # 写入问题内容
+                        f.write('\n')
                     f.write('\n\n')
 
                 f.write('## 4. Words summary\n\n')
@@ -461,6 +462,7 @@ class ExceptAIandEnglishSentenceMaker:
                     f.write('### Words' + str(i + 1) + ': \n')
                     for j in range(len(self.WordsLines[i])):
                         f.write(self.WordsLines[i][j])
+                        f.write('\n')
                     f.write('\n\n')
 
                 f.write('## 5. Phrases summary\n\n')
@@ -469,6 +471,7 @@ class ExceptAIandEnglishSentenceMaker:
                     f.write('### Phrases' + str(i + 1) + ': \n')
                     for j in range(len(self.PhrasesLines[i])):
                         f.write(self.PhrasesLines[i][j])
+                        f.write('\n')
                     f.write('\n\n')
 
 
