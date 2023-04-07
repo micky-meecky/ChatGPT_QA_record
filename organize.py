@@ -13,12 +13,16 @@ class Organize:
         self.Md_path = config.Md_path
         self.readme_path = config.readme_path
         self.readme_flag = config.readme_flag
+        self.task_type = config.task_type
+
         self.Qnum = 0
         self.Anum = 0
         self.QAnum = 0
+        self.Promptnum = 0
         self.history_path = './history/'
         self.QLines = []
         self.ALines = []
+        self.Prompts = []
         self.QA = []
 
 
@@ -40,10 +44,19 @@ class Organize:
     def TallyUpNum(self):
         self.ReadFile()
         digits = 0
+        p_digits = 0
         for line in self.lines:
             # 如果改行开头是以Q+数字开头的，并它的前两行是空行，那么该行就是问题行，问题数加1
             foreline1 = self.lines[self.lines.index(line) - 1]
             foreline2 = self.lines[self.lines.index(line) - 2]
+            if line.startswith('Prompt') and foreline1 == '\n' and foreline2 == '\n':
+                self.Promptnum += 1
+                # 获取prompt后面的数字, 一般形式为prompt+空格+数字+:+空格+内容
+                # q: 为什么要获取prompt后面的数字？ a: 为了统计prompt数。
+                p_digits = line.split('Prompt')[1].split(':')[0]
+                # 将数字转换为int类型
+                p_digits = int(p_digits)
+
             if line.startswith('Q') and foreline1 == '\n' and foreline2 == '\n':
                 self.Qnum += 1
                 # 获取Q后面的数字, 一般形式为Q+数字+;+空格+问题内容
@@ -57,8 +70,21 @@ class Organize:
                 self.Anum += 1
 
         # 打印文本内容中的digits数
-        print('digits数为：', digits)
-        self.QAnum = digits
+        print('Q\'s digits数为：', digits)
+        # self.QAnum = digits
+        if digits == self.Qnum:  # 如果问题数和问题后面的数字相等，那么就是正确的问题数
+            self.Qnum = digits
+        else:
+            print('问题数和问题后面的数字不相等，请检查！')
+
+
+        # 打印文本内容中的prompt数
+        print('Prompt\'s digits数为：', p_digits)
+        if p_digits == self.Promptnum:  # 如果prompt数和prompt后面的数字相等，那么就是正确的prompt数
+            self.Promptnum = p_digits
+        else:
+            print('Prompt数和Prompt后面的数字不相等，请检查！')
+
 
     # 创建名为name的文件夹
     def CreateFolder(self, name):
@@ -78,10 +104,13 @@ class Organize:
         _is_Aline = False   # 用于判断当前行是不是问题行或者回答行
         subQ = []  # 用于存储问题i中的行
         subA = []  # 用于存储回答i中的行
+        subprompt = []  # 用于存储prompt中的行
         idx = 0  # 用于记录当前行的索引
         q_idx = 0  # 用于记录当前问题的索引
         a_idx = 0  # 用于记录当前回答的索引
+        prompt_idx = 0  # 用于记录当前prompt的索引
         digits = 0  # 用于记录当前行的数字
+        in_prompt = False  # 用于判断当前行是不是在prompt中
 
         # 首先读取TXT文件内容并按照问题和回答的形式分割，将其转换为一个嵌套列表（list of lists）的形式，每个子列表包含一个问题和其对应的回答。
         # 不需要调用ReadFile()函数，因为TallyUpNum()函数中已经调用过了。
@@ -96,17 +125,77 @@ class Organize:
             # 获取后两行的内容
             backline1 = self.lines[self.lines.index(line) + 1]
             backline2 = self.lines[self.lines.index(line) + 2]
+            backline3 = self.lines[self.lines.index(line) + 3]
+
+            # 开始检测prompt行
+            if line.startswith('Prompt'):
+                # 去除开头的Prompt
+                line = line.split(':', 1)[1]
+                # 获取prompt后面的数字, 一般形式为prompt+‘ ’+数字+:+空格+问题内容
+                digits = line.split(' ')[1].split(':')[0]
+                # 在line的开头加三个空格，作为缩进
+                line = '  ' + line
+                # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
+                if '{' in line:
+                    line = line.replace('{', '%')
+                if '}' in line:
+                    line = line.replace('}', '%')
+                if ':' in line:
+                    line = line.replace(':', '. ')
+
+                if backline2.startswith('\n') and backline1.startswith('\n'):   # 如果后面两行都是空行, 那么就是prompt的第一行，也是最后一行
+                    # 把这行加入到subprompt列表中
+                    subprompt.append(line)
+                    in_prompt = False   # 退出prompt中
+                    if backline3.startswith('Q'):
+                        # 如果下下下行是以Q+数字开头的，那么就把subprompt列表中的内容加入到subQ列表中
+                        self.Prompts.append(subprompt)
+                        # 清空subprompt列表
+                        subprompt = []
+                        prompt_idx += 1
+
+                    else:
+                        # 如果下下下行不是以Q+数字开头的，那么就把subprompt列表中的内容加到self.Prompts列表中
+                        self.Prompts.append(subprompt)
+                        # 清空subprompt列表
+                        subprompt = []
+                        prompt_idx += 1
+                    continue
+                else:
+                    # 如果后面两行有任意一行不是空行，说明这行不是prompt的最后一行
+                    # 把这行加入到subprompt列表中
+                    subprompt.append(line)
+                    in_prompt = True    # 设置为在prompt中
+                    continue
+
+            if in_prompt:   # 如果在prompt中，那么就把prompt中的行加入到subprompt列表中
+                if backline2.startswith('\n') and backline1.startswith('\n'):   # 若后面联行是空行，说明这行是这个prompt的最后一行
+                    # 把这行加入到subprompt列表中
+                    subprompt.append(line)
+                    in_prompt = False   # 退出prompt中
+                    # 如果下下下行是以Q+数字开头的，那么就把subprompt列表中的内容加入到subQ列表中
+                    self.Prompts.append(subprompt)
+                    # 清空subprompt列表
+                    subprompt = []
+                    prompt_idx += 1
+                    continue
+                else:
+                    # 如果后面两行有任意一行不是空行，说明这行不是prompt的最后一行
+                    # 把这行加入到subprompt列表中
+                    subprompt.append(line)
+                    in_prompt = True
+                    continue
+
+
+
+
+            # 开始检测Q&A行
             if line.startswith('Q') and foreline1 == '\n' and foreline2 == '\n':
                 digits = line.split('Q')[1].split(':')[0]  # 获取Q后面的数字, 一般形式为Q+数字+;+空格+问题内容
                 # 去除开头的Q/A+数字+;
                 line = line.split(':', 1)[1]
                 # 在line的开头加三个空格，作为缩进
                 line = '  ' + line
-                # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
-                # if '{' in line:
-                #     line = line.replace('{', '%')
-                # if '}' in line:
-                #     line = line.replace('}', '%')
                 if ':' in line:
                     line = line.replace(':', '. ')
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
@@ -135,11 +224,6 @@ class Organize:
                 line = line.split(':')[1]
                 # 在line的开头加三个空格，作为缩进
                 line = '  ' + line
-                # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
-                # if '{' in line:
-                #     line = line.replace('{', '%')
-                # if '}' in line:
-                #     line = line.replace('}', '%')
                 if ':' in line:
                     line = line.replace(':', '. ')
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
@@ -227,17 +311,42 @@ class Organize:
         # 如果self.Md_path存在，那么先将其移动到history文件夹中
         if not os.path.exists(self.Md_path):
             # 如果self.Md_path不存在，那么直接创建
-            # 创建一个新的md文件
-            with open(self.Md_path, 'w', encoding='utf-8') as f:
+            if self.task_type == 'AI':
+                # 创建一个新的md文件
+                with open(self.Md_path, 'w', encoding='utf-8') as f:
+                    # 向文件中写入标题
+                    f.write('# Title\n\n')
+                    # 写入小标题
+                    f.write('## 1. Introduction\n\n')
+                    f.write('The purpose of this document is to provide a comprehensive overview of the'
+                            'questions and answers on the ChatGPT. \n'
+                            'The document is structured as follows: Section 2 provides a summary of the questions and answers.'
+                            'The document concludes with a list of references used to prepare this summary.'
+                            '\n\n')
+            elif self.task_type == 'english_sentence_maker':
+                # 创建一个新的md文件
+                with open(self.Md_path, 'w', encoding='utf-8') as f:
+                    # 向文件中写入标题
+                    f.write('# English Sentence Maker\n\n')
+                    # 写入小标题
+                    f.write('## 1. Introduction\n\n')
+                    f.write('The purpose of this document is to make a comprehensive English sentence which have to meet'
+                            'user\'s special requirments. \n\n')
+
+            elif self.task_type == 'English_reading':
+                # 创建一个新的md文件
+                with open(self.Md_path, 'w', encoding='utf-8') as f:
                 # 向文件中写入标题
-                f.write('# Title\n\n')
-                # 写入小标题
-                f.write('## 1. Introduction\n\n')
-                f.write('The purpose of this document is to provide a comprehensive overview of the'
-                        'questions and answers on the ChatGPT. \n'
-                        'The document is structured as follows: Section 2 provides a summary of the questions and answers.'
-                        'The document concludes with a list of references used to prepare this summary.'
-                        '\n\n')
+                    f.write('# English Reading\n\n')
+                    # 写入小标题
+                    f.write('## 1. Introduction\n\n')
+                    f.write('The purpose of this document is to make a comprehensive English reading which have to '
+                            'involve an article which is give by user, some multiple-choice questions which are '
+                            'made by ChatGPT, and some advanced words and phrase in the article as well as made by '
+                            'ChatGPT. \n\n')
+            else:
+                print("task_type error")
+                return None
         else:
             # 先创建history文件夹
             self.CreateFolder(self.history_path)
@@ -252,6 +361,7 @@ class Organize:
             # 最后将文件复制到history文件夹中，注意是复制，不是移动
             # os.rename(self.Md_path, self.history_path + md_name)
             shutil.move(self.Md_path, self.history_path + md_name)
+
             # 创建一个新的md文件
             with open(self.Md_path, 'w', encoding='utf-8') as f:
                 # 向文件中写入标题
@@ -259,21 +369,62 @@ class Organize:
                 # 写入小标题
                 f.write('\n## 1. Introduction\n\n')
                 f.write('   The purpose of this document is to provide a comprehensive overview of the'
-                        'questions and answers on the ChatGPT. \n'
-                        'The document is structured as follows: Section 1 provides a '
-                        'summary of the questions and answers.'
-                        'Section 2 provides the specific questions and answers. '
-                        'The document concludes with a list of references used to prepare this summary.'
+                        'questions and answers on the ChatGPT. \nThe document is structured as follows: Section 1'
+                        ' provides a summary of the questions and answers.Section 2 provides the specific questions '
+                        'and answers. The document concludes with a list of references used to prepare this summary.'
                         '\n\n')
-                f.write('## 2. Q&A\n\n')
+                # 写入一些必要的提示词，给CHatGPT使用
+                f.write('## 2. Prompts\n\n')
+                # f.write('   The following prompts are used to generate the questions and answers correctly. \n\n')
+                # f.write('   **Prompt 1: **' )
+                # f.write(' I want you to act an english sentence maker. But there are some specification have to '
+                #         'set forth. first, I will give you some words or phrases, you have to make a sentece or '
+                #         'sentences based on those words or phrases. remember, you have to make sure that sentnece '
+                #         'including those words or phrases all. Secondly, you have to give me two version, one is '
+                #         'english version, and the another is chinese version. Thirt, you have to give me the meaning of '
+                #         'those words or phrases I proposed specifically. Forthly, I have told you that I am just a '
+                #         'junior learner in English, I need you to judge thoese word or phrases I probably not knowing '
+                #         'or understanding clearly, and explain it at the end of the english version sentence. '
+                #         'Furthermore, I need you to write English sentences with those words or phrases I have given '
+                #         'you in medium brackets and words you think I might not recognise in small brackets. If you '
+                #         'understand it, pls answer it with just a \" I got it\".\n')
+                # f.write('   **Prompt 2: **' )
+                # f.write(' So next, I will give you some simple examples.\n')
+                # f.write('  example 1:' )
+                # f.write(' I says:" Please give me an example including "have to","a lot of","professors".'
+                #         'You answers:" ENGLISH: I [have to] find [a lot of] [professors] to get them agreement of '
+                #         'protecting enviroment from those (jerks). \n')
+                # f.write('中文: 我[必须]找到[很多][教授]，让他们同意保护环境不受那些（混蛋）影响。\n')
+                # f.write('EXPLAINATION: [have to]: "Have to" is a modal verb that is used to indicate that something is'
+                #         ' necessary or required. It is often used to express obligation, duty, or compulsion. For '
+                #         'example, "I have to go to work today," means that going to work is necessary or required for '
+                #         'some reason, such as to earn a living or to fulfill a contractual obligation. "Have to" can '
+                #         'also be used to express a strong recommendation or advice. For example, \"You have to try the '
+                #         'seafood here - it\'s amazing" means that it is strongly recommended that you try the seafood" '
+                #         '" because it is very good.\n' )
+                # f.write('  EXTRA WORDS or PHRASE:(jerks):"Jerks" is a colloquial term that is often used to describe a '
+                #         'person who is rude, unpleasant, or behaves in an obnoxious manner. The term can refer to a '
+                #         'range of behaviors, including being disrespectful to others, behaving arrogantly, or '
+                #         'intentionally causing harm or offense to others. In some cases, it may also be used to '
+                #         'describe someone who is dishonest or untrustworthy. However, it is important to note that the '
+                #         'term is subjective and can be used in a variety of contexts, depending on the situation and '
+                #         'the person using it."\n If you understand it, pls answer it with just a " I got it".' )
+                for i in range(len(self.Prompts)):
+                    f.write('Promp' + str(i + 1) + ': \n')
+                    for j in range(len(self.Prompts[i])):
+                        f.write(self.Prompts[i][j])  # 写入提示内容
+
+                f.write('## 3. Q&A\n\n')
 
         # 遍历读取QA中的内容，追加写入到md文件中
         with open(self.Md_path, 'a', encoding='utf-8') as f:
-            # 添加问题索引
+            # 添加问题目录
             f.write('\n### <a name="section1"></a>' + 'Section 1: Questions Index. \n\n')
             for i in range(len(self.QA[0])):
                 f.write('#### [Q' + str(i + 1) + ']' + '(#question' + str(i + 1) + ')' + ':' + self.QA[0][i][0])
             f.write('\n\n')
+
+            # 添加问题和答案
             f.write('\n### Section 2: Specific Q&A. \n\n')
             for i in range(len(self.QA[0])):
                 # 写入问题
@@ -304,6 +455,8 @@ def parse_args():
     parser.add_argument('--Md_path', type=str, default='./english_sentence_maker.md', help='self_attention.md文件路径')
     parser.add_argument('--readme_path', type=str, default='./readme.md', help='readme.md文件路径')
     parser.add_argument('--readme_flag', type=bool, default=False, help='是否将md文件复制到readme.md中？')
+    parser.add_argument('--task_type', type=str, default='english_sentence_maker', help='English_sentence_maker '
+                        ' English_reading, AI, English_words_learning, ComputerScience')
     return parser.parse_args()
 
 
@@ -315,3 +468,4 @@ if __name__ == '__main__':
     organize.WriteToMd()
     print('问题数为：', organize.Qnum)
     print('回答数为：', organize.Anum)
+    print('prompt数为：', organize.Promptnum)
