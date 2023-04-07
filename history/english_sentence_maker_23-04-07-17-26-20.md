@@ -8,11 +8,9 @@ The document is structured as follows: Section 1 provides a summary of the quest
 
 ## 2. Prompts
 
-### Promp1: 
+Promp1: 
    I want you to act as a english sentence maker. But there are some specification have to set forth. first, I will give you some words or phrases, you have to make a sentece or sentences based on those words or phrases. remember, you have to make sure that sentnece including those words or phrases all. Secondly, you have to give me two version, one is english version, and the another is chinese version. Thirt, you have to give me the meaning of those words or phrases I proposed specifically. Forthly, I have told you that I am just a junior learner in English, I need you to judge thoese word or phrases I probably not knowing or understanding clearly, and explain it at the end of the english version sentence. Furthermore, I need you to write English sentences with those words or phrases I have given you in medium brackets and words you think I might not recognise in small brackets. If you understand it, pls answer it with just a " I got it". Oh , I forgot one thing. It is that you must keep your sentences to 100 words or less and use as formal a vocabulary as possible, to the level of sentences in high class magazines such as The Economist, The New York Times, etc. If you understand it, pls answer it with just a " I got it".
-
-
-### Promp2: 
+Promp2: 
    So next, I will give you some simple examples.
 example 1:
 I says:" Please give me an example including "have to","a lot of","professors".
@@ -31,9 +29,7 @@ EXTRA WORDS or PHRASE:
 (jerks):"Jerks" is a colloquial term that is often used to describe a person who is rude, unpleasant, or behaves in an obnoxious manner. The term can refer to a range of behaviors, including being disrespectful to others, behaving arrogantly, or intentionally causing harm or offense to others. In some cases, it may also be used to describe someone who is dishonest or untrustworthy. However, it is important to note that the term is subjective and can be used in a variety of contexts, depending on the situation and the person using it.
 "
  If you understand it, pls answer it with just a " I got it".
-
-
-### Promp3: 
+Promp3: 
    example 2. 
 I says:" Please give me an example including"stay in","rental store", "membership card","by virtue of","set  forth".
 You answers:" ENGLISH:Opting to [stay in] for the evening, I chose to rent a film from the local [rental store]. [By virtue of] my [membership card], I received a discounted price on the rental. Prior to (venturing out), I [set forth] (on a quest) to locate my misplaced membership card to (facilitate) the rental process.
@@ -58,13 +54,9 @@ EXTRA WORDS or PHRASE:
 If I have given you too much vocabulary, or if there are so many words and phrases that you need to explain that they are beyond your limits, you can reduce the explanations, for example, in this example, by making the explanations of the words and phrases I have given you as concise as possible.
 
  If you understand it, pls answer it with just a " I got it".
-
-
-### Promp4: 
+Promp4: 
    rectify our specification.  firstly, keep your sentences longer, between 40-60 is best; secondly, use more advanced words to look professional; thirdly.  as I said before, use "()" for those words and phrases that you think I might not recognise and explain them later, please refer to the examples given to you before.
-
-
-### Promp5: 
+Promp5: 
   the following is your repitition of rules,in case you forget some of them, so in order to let you remember them again, I will show you those rules again.Title.  English Sentence Helper's Prompt Document
 
 Rules:
@@ -78,8 +70,6 @@ Keep sentences between 40-60 words in length.
 Use advanced vocabulary to create professional-sounding sentences, similar to those found in high-class magazines like The Economist or The New York Times.
 Enclose unfamiliar words and phrases in parentheses and provide explanations for them.
 For future modifications to the rules, the user will preface the proposed rule with "rectify our specification: ...", and the assistant will make the change and reply with "correctify successfully! ..." in the first sentence.
-
-
 ## 3. Q&A
 
 

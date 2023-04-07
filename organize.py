@@ -153,7 +153,6 @@ class Organize:
                         # 清空subprompt列表
                         subprompt = []
                         prompt_idx += 1
-
                     else:
                         # 如果下下下行不是以Q+数字开头的，那么就把subprompt列表中的内容加到self.Prompts列表中
                         self.Prompts.append(subprompt)
@@ -410,9 +409,10 @@ class Organize:
                 #         'term is subjective and can be used in a variety of contexts, depending on the situation and '
                 #         'the person using it."\n If you understand it, pls answer it with just a " I got it".' )
                 for i in range(len(self.Prompts)):
-                    f.write('Promp' + str(i + 1) + ': \n')
+                    f.write('### Promp' + str(i + 1) + ': \n')
                     for j in range(len(self.Prompts[i])):
                         f.write(self.Prompts[i][j])  # 写入提示内容
+                    f.write('\n\n')
 
                 f.write('## 3. Q&A\n\n')
 
