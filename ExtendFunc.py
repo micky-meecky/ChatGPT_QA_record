@@ -448,6 +448,16 @@ class ExceptAIandEnglishSentenceMaker:
                     f.write('\n\n')
 
                 f.write('## 3. Q\n\n')
+
+                # 写入article
+                for i in range(len(self.Articles)):
+                    f.write('### Article' + str(i + 1) + ': \n')
+                    for j in range(len(self.Articles[i])):
+                        f.write(self.Articles[i][j])
+                    f.write('\n\n')
+
+
+
                 for i in range(len(self.QLines)):
                     # 写入问题
                     f.write('### Q' + str(i + 1) + ': \n')
