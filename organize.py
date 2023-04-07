@@ -102,6 +102,15 @@ class Organize:
                 line = line.split(':')[1]
                 # 在line的开头加三个空格，作为缩进
                 line = '  ' + line
+                # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
+                if '{' in line:
+                    line = line.replace('{', '[')
+                if '}' in line:
+                    line = line.replace('}', ']')
+                # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
+                if 'style' in line:
+                    line = line.replace('style', 'story-style')
+
                 if backline1.startswith('A'):  # 说明此时的line是问题行的最后一行
                     # 说明此时的line是问题行的最后一行
                     subQ.append(line)
@@ -124,6 +133,14 @@ class Organize:
                 line = line.split(':')[1]
                 # 在line的开头加三个空格，作为缩进
                 line = '  ' + line
+                # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
+                if '{' in line:
+                    line = line.replace('{', '[')
+                if '}' in line:
+                    line = line.replace('}', ']')
+                # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
+                if 'style' in line:
+                    line = line.replace('style', 'story-style')
                 if backline1 == '\n' and backline2 == '\n':
                     # 说明此时的line是回答行的最后一行
                     subA.append(line)
@@ -141,6 +158,14 @@ class Organize:
                     _is_Qline = False
                     _is_Aline = True
             else:
+                # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
+                if '{' in line:
+                    line = line.replace('{', '[')
+                if '}' in line:
+                    line = line.replace('}', ']')
+                # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
+                if 'style' in line:
+                    line = line.replace('style', 'story-style')
                 if _is_Qline:
                     # 如果backline1是以A+数字开头的，则说明该行为问题行的最后一行
                     if backline1.startswith('A'):   # 说明此时的line是问题行的最后一行

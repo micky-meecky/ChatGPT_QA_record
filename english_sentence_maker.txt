@@ -63,7 +63,7 @@ EXPLANATION:
 
 
 Q6: Please give me an example including "charge late fees","loacal rental store","membership card","to order in".{style: love, romantic}
-A6:  Amidst the soft glow of candlelight, the couple decided to [order in] a delectable meal from their favorite [local rental store], which, besides renting movies, also offered exquisite cuisine. As they savored each bite and gazed into each other's eyes, they promised to always return their rented items on time, ensuring their [membership card] would never be burdened with [late fees], as their love remained free from any obligations.
+A6: Amidst the soft glow of candlelight, the couple decided to [order in] a delectable meal from their favorite [local rental store], which, besides renting movies, also offered exquisite cuisine. As they savored each bite and gazed into each other's eyes, they promised to always return their rented items on time, ensuring their [membership card] would never be burdened with [late fees], as their love remained free from any obligations.
 
 中文: 在烛光的柔和映照下，这对情侣决定从他们最喜欢的[当地租赁商店]（除了租电影外，还提供精美的美食）[点外卖]品尝美味佳肴。当他们品味着每一口美食，凝视着彼此的眼睛，他们承诺永远按时归还租赁物品，确保他们的[会员卡]永远不会被[收取滞纳金]，因为他们的爱情摆脱了任何义务。
 
@@ -75,7 +75,7 @@ EXPLANATION:
 
 
 Q7: Please give me an example including "charge late fees","loacal rental store","membership card","to order in"，“mull over”.{style: adventure, fantacy }
-A7:  In a realm where mystical creatures roamed, two adventurers decided to [order in] an enchanted feast from the magical [local rental store] that served both as a repository of ancient tomes and a purveyor of otherworldly cuisine. As they [mulled over] their choices, they vowed to honor their [membership card] and avoid the wrath of the legendary dragon by never incurring [late fees] when returning the store's precious relics.
+A7: In a realm where mystical creatures roamed, two adventurers decided to [order in] an enchanted feast from the magical [local rental store] that served both as a repository of ancient tomes and a purveyor of otherworldly cuisine. As they [mulled over] their choices, they vowed to honor their [membership card] and avoid the wrath of the legendary dragon by never incurring [late fees] when returning the store's precious relics.
 
 中文: 在一个神奇生物遨游的王国里，两位冒险家决定从神秘的[当地租赁商店]（既是古籍的宝库，又是异界美食的供应商）[点外卖]一顿魔法盛宴。当他们[仔细考虑]他们的选择时，他们发誓要尊重他们的[会员卡]，通过永远不让[滞纳金]的产生来避免传说中的巨龙的愤怒，当归还商店的珍贵遗物时。
 
@@ -118,7 +118,7 @@ EXPLANATION:
 
 
 Q10: Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，“mull over”, "with respect to".{style: science fiction , war}
-A10:  In the year 2150, during the Great Intergalactic War, a (dystopian) world where [charge late fees] remained a common practice, the fate of the battles would often [be a crapshoot]. Soldiers [mull over] [take-out menus] from the automated battlefield kitchens, uncertain of what [to order in]. Their choices were made [with respect to] the limited time they had before the next skirmish.
+A10: In the year 2150, during the Great Intergalactic War, a (dystopian) world where [charge late fees] remained a common practice, the fate of the battles would often [be a crapshoot]. Soldiers [mull over] [take-out menus] from the automated battlefield kitchens, uncertain of what [to order in]. Their choices were made [with respect to] the limited time they had before the next skirmish.
 
 中文: 在2150年，伟大的星际战争期间，一个[征收滞纳金]仍然普遍的（反乌托邦）世界中，战斗的命运经常[碰运气]。士兵们在自动战场厨房的[外卖菜单]上[思考]，不确定[点哪个]。他们的选择是基于他们在下一场小冲突之前所剩的有限时间来[做出的]。
 
@@ -366,7 +366,7 @@ EXPLANATION:
 
 
 Q22: Please give me an example including,"stand in strong contrast to", "hover around", "be placed on" which means to emphasize, "such a high premium", "be motivated by desire to".{style: strange, politics}
-A22:  The policies of the eccentric government [stand in strong contrast to] conventional political strategies, as they [hover around] (focus on) unconventional ideas and priorities. [Such a high premium] is [placed on] (emphasized) these unorthodox approaches, driven by the belief that they will yield surprising results. The leaders are [motivated by the desire to] challenge traditional norms and explore new possibilities in governance.
+A22: The policies of the eccentric government [stand in strong contrast to] conventional political strategies, as they [hover around] (focus on) unconventional ideas and priorities. [Such a high premium] is [placed on] (emphasized) these unorthodox approaches, driven by the belief that they will yield surprising results. The leaders are [motivated by the desire to] challenge traditional norms and explore new possibilities in governance.
 
 中文: 古怪政府的政策[与]传统政治策略[形成鲜明对比]，因为它们[围绕]（关注）非常规的观念和优先事项。[如此高的价值]被[放在]（强调）这些非正统的方法上，由相信这些方法将产生惊人结果的信念所驱动。领导人[由渴望]挑战传统规范和探索治理新可能性而行动。
 

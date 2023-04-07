@@ -15,7 +15,7 @@ The document is structured as follows: Section 1 provides a summary of the quest
 #### [Q2](#question2):   Please give me an example including "ward off","in favor of","merchants","disreputable".
 #### [Q3](#question3):   Please give me an example including "pave the way for", "contribute to","be liable to", "grind out".
 #### [Q4](#question4):   Please give me an example including "charge late fees","loacal rental store","membership card","stay in".
-#### [Q5](#question5):    Please give me an example including "charge late fees","loacal rental store","membership card","stay in".[story-style#### [Q6](#question6):   Please give me an example including "charge late fees","loacal rental store","membership card","to order in".[story-style#### [Q7](#question7):   Please give me an example including "charge late fees","loacal rental store","membership card","to order in"，“mull over”.[story-style#### [Q8](#question8):   Please give me an example including "charge late fees","loacal rental store","take-out menus","to order in"，“mull over”.[story-style#### [Q9](#question9):   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，“mull over”, "with respect to".[story-style#### [Q10](#question10):   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，“mull over”, "with respect to".[story-style#### [Q11](#question11):   Please give me an example including "romantic","Mr.yang"，"be obsessed with", “miss liu”, "with respect to", "underneath the moonlight","fevered feeling","flowers","bashful".[story-style#### [Q12](#question12):   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，"mull over" "with respect to"，"sign a slip".[story-style#### [Q13](#question13):   Please give me an example including"be a crapshoot","sign a slip","mull over","debit card","up and coming".[story-style#### [Q14](#question14):   Please give me an example including"be a crapshoot","sign a slip","mull over","debit card","up and coming","veg out","idly","take-out menus".[story-style#### [Q15](#question15):   Please give me an example including,"sign a slip",,"debit card","veg out","get over a hectic week".[story-style#### [Q16](#question16):   Please give me an example including,"dedicated to","be commited to", "be intended for", "accessory", "up and coming", "perseverance".[story-style#### [Q17](#question17):   Please give me an example including,"dedicated to",", "up and coming", "foster","music genra","there's no agreed upon".[story-style#### [Q18](#question18):   Please give me an example including,"dedicated to",", "up and coming", "such a high premium is placed on".[story-style#### [Q19](#question19):   Please give me an example including,"be commited to", "be placed on" which means to emphasize, "such a high premium".[story-style#### [Q20](#question20):   Please give me an example including,"dedicated to","up and coming", "hover around", "be placed on" which means to emphasize, "such a high premium".[story-style#### [Q21](#question21):   Please give me an example including,"stand in strong contrast to","up and coming", "hover around", "be placed on" which means to emphasize, "such a high premium", "be motivated by desire to".[story-style#### [Q22](#question22):   Please give me an example including,"stand in strong contrast to", "hover around", "be placed on" which means to emphasize, "such a high premium", "be motivated by desire to".[story-style
+#### [Q5](#question5):    Please give me an example including "charge late fees","loacal rental store","membership card","stay in".{style#### [Q6](#question6):   Please give me an example including "charge late fees","loacal rental store","membership card","to order in".{style#### [Q7](#question7):   Please give me an example including "charge late fees","loacal rental store","membership card","to order in"，“mull over”.{style#### [Q8](#question8):   Please give me an example including "charge late fees","loacal rental store","take-out menus","to order in"，“mull over”.{style#### [Q9](#question9):   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，“mull over”, "with respect to".{style#### [Q10](#question10):   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，“mull over”, "with respect to".{style#### [Q11](#question11):   Please give me an example including "romantic","Mr.yang"，"be obsessed with", “miss liu”, "with respect to", "underneath the moonlight","fevered feeling","flowers","bashful".{style#### [Q12](#question12):   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，"mull over" "with respect to"，"sign a slip".{style#### [Q13](#question13):   Please give me an example including"be a crapshoot","sign a slip","mull over","debit card","up and coming".{style#### [Q14](#question14):   Please give me an example including"be a crapshoot","sign a slip","mull over","debit card","up and coming","veg out","idly","take-out menus".{style#### [Q15](#question15):   Please give me an example including,"sign a slip",,"debit card","veg out","get over a hectic week".{style#### [Q16](#question16):   Please give me an example including,"dedicated to","be commited to", "be intended for", "accessory", "up and coming", "perseverance".{style#### [Q17](#question17):   Please give me an example including,"dedicated to",", "up and coming", "foster","music genra","there's no agreed upon".{style#### [Q18](#question18):   Please give me an example including,"dedicated to",", "up and coming", "such a high premium is placed on".{style#### [Q19](#question19):   Please give me an example including,"be commited to", "be placed on" which means to emphasize, "such a high premium".{style#### [Q20](#question20):   Please give me an example including,"dedicated to","up and coming", "hover around", "be placed on" which means to emphasize, "such a high premium".{style#### [Q21](#question21):   Please give me an example including,"stand in strong contrast to","up and coming", "hover around", "be placed on" which means to emphasize, "such a high premium", "be motivated by desire to".{style#### [Q22](#question22):   Please give me an example including,"stand in strong contrast to", "hover around", "be placed on" which means to emphasize, "such a high premium", "be motivated by desire to".{style
 
 
 ### Section 2: Specific Q&A. 
@@ -84,7 +84,7 @@ EXPLANATION:
 [Stay in] - 待在家里: To remain at home or indoors, rather than going out.
 #### [Return to Q Index](#section1)
 
-## <a name="question5"></a>Q5:    Please give me an example including "charge late fees","loacal rental store","membership card","stay in".[story-style
+## <a name="question5"></a>Q5:    Please give me an example including "charge late fees","loacal rental store","membership card","stay in".{style
 
 #### A5: 
    ENGLISH In the eerily quiet town, the [local rental store], which had been mysteriously transformed into a high-tech hub, enticed customers with its vast selection of virtual reality experiences for those who dared to [stay in]. However, those who failed to return the advanced gear on time would find their [membership card] charged with sinister [late fees], leaving them haunted by unrelenting debts.
@@ -98,10 +98,10 @@ EXPLANATION:
 [Stay in] - 待在家里: To remain at home or indoors, rather than going out.
 #### [Return to Q Index](#section1)
 
-## <a name="question6"></a>Q6:   Please give me an example including "charge late fees","loacal rental store","membership card","to order in".[story-style
+## <a name="question6"></a>Q6:   Please give me an example including "charge late fees","loacal rental store","membership card","to order in".{style
 
 #### A6: 
-   Amidst the soft glow of candlelight, the couple decided to [order in] a delectable meal from their favorite [local rental store], which, besides renting movies, also offered exquisite cuisine. As they savored each bite and gazed into each other's eyes, they promised to always return their rented items on time, ensuring their [membership card] would never be burdened with [late fees], as their love remained free from any obligations.
+    Amidst the soft glow of candlelight, the couple decided to [order in] a delectable meal from their favorite [local rental store], which, besides renting movies, also offered exquisite cuisine. As they savored each bite and gazed into each other's eyes, they promised to always return their rented items on time, ensuring their [membership card] would never be burdened with [late fees], as their love remained free from any obligations.
 
 中文: 在烛光的柔和映照下，这对情侣决定从他们最喜欢的[当地租赁商店]（除了租电影外，还提供精美的美食）[点外卖]品尝美味佳肴。当他们品味着每一口美食，凝视着彼此的眼睛，他们承诺永远按时归还租赁物品，确保他们的[会员卡]永远不会被[收取滞纳金]，因为他们的爱情摆脱了任何义务。
 
@@ -112,10 +112,10 @@ EXPLANATION:
 [Order in] - 点外卖: To request food delivery from a restaurant or store, so you can enjoy the meal at home or another location.
 #### [Return to Q Index](#section1)
 
-## <a name="question7"></a>Q7:   Please give me an example including "charge late fees","loacal rental store","membership card","to order in"，“mull over”.[story-style
+## <a name="question7"></a>Q7:   Please give me an example including "charge late fees","loacal rental store","membership card","to order in"，“mull over”.{style
 
 #### A7: 
-   In a realm where mystical creatures roamed, two adventurers decided to [order in] an enchanted feast from the magical [local rental store] that served both as a repository of ancient tomes and a purveyor of otherworldly cuisine. As they [mulled over] their choices, they vowed to honor their [membership card] and avoid the wrath of the legendary dragon by never incurring [late fees] when returning the store's precious relics.
+    In a realm where mystical creatures roamed, two adventurers decided to [order in] an enchanted feast from the magical [local rental store] that served both as a repository of ancient tomes and a purveyor of otherworldly cuisine. As they [mulled over] their choices, they vowed to honor their [membership card] and avoid the wrath of the legendary dragon by never incurring [late fees] when returning the store's precious relics.
 
 中文: 在一个神奇生物遨游的王国里，两位冒险家决定从神秘的[当地租赁商店]（既是古籍的宝库，又是异界美食的供应商）[点外卖]一顿魔法盛宴。当他们[仔细考虑]他们的选择时，他们发誓要尊重他们的[会员卡]，通过永远不让[滞纳金]的产生来避免传说中的巨龙的愤怒，当归还商店的珍贵遗物时。
 
@@ -126,7 +126,7 @@ EXPLANATION:
 [Order in] - 点外卖: To request food delivery from a restaurant or store, so you can enjoy the meal at home or another location.
 #### [Return to Q Index](#section1)
 
-## <a name="question8"></a>Q8:   Please give me an example including "charge late fees","loacal rental store","take-out menus","to order in"，“mull over”.[story-style
+## <a name="question8"></a>Q8:   Please give me an example including "charge late fees","loacal rental store","take-out menus","to order in"，“mull over”.{style
 
 #### A8: 
    In a futuristic metropolis, citizens [mull over] their options from holographic [take-out menus], as they [order in] their sustenance from a [local rental store] that provides both nutrient-packed meal capsules and cutting-edge tech devices. Failure to return the gadgets on time would result in the store [charging late fees], automatically deducted from the users' digital currency accounts through their implanted [membership card] microchips.
@@ -140,7 +140,7 @@ EXPLANATION:
 [Order in] - 点外卖: To request food delivery from a restaurant or store, so you can enjoy the meal at home or another location.
 #### [Return to Q Index](#section1)
 
-## <a name="question9"></a>Q9:   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，“mull over”, "with respect to".[story-style
+## <a name="question9"></a>Q9:   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，“mull over”, "with respect to".{style
 
 #### A9: 
    In a dystopian world ravaged by war, [with respect to] the dwindling food supplies, citizens [mull over] their options
@@ -152,10 +152,10 @@ EXPLANATION:
 (nefarious): "Nefarious" is an adjective that describes someone or something that is wicked, evil, or morally wrong. It is often used to describe actions or activities that are considered to be unethical, corrupt, or harmful to others.
 #### [Return to Q Index](#section1)
 
-## <a name="question10"></a>Q10:   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，“mull over”, "with respect to".[story-style
+## <a name="question10"></a>Q10:   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，“mull over”, "with respect to".{style
 
 #### A10: 
-   In the year 2150, during the Great Intergalactic War, a (dystopian) world where [charge late fees] remained a common practice, the fate of the battles would often [be a crapshoot]. Soldiers [mull over] [take-out menus] from the automated battlefield kitchens, uncertain of what [to order in]. Their choices were made [with respect to] the limited time they had before the next skirmish.
+    In the year 2150, during the Great Intergalactic War, a (dystopian) world where [charge late fees] remained a common practice, the fate of the battles would often [be a crapshoot]. Soldiers [mull over] [take-out menus] from the automated battlefield kitchens, uncertain of what [to order in]. Their choices were made [with respect to] the limited time they had before the next skirmish.
 
 中文: 在2150年，伟大的星际战争期间，一个[征收滞纳金]仍然普遍的（反乌托邦）世界中，战斗的命运经常[碰运气]。士兵们在自动战场厨房的[外卖菜单]上[思考]，不确定[点哪个]。他们的选择是基于他们在下一场小冲突之前所剩的有限时间来[做出的]。
 
@@ -178,7 +178,7 @@ EXTRA WORDS or PHRASES:
 (dystopian): A term used to describe a society or setting characterized by suffering, oppression, or injustice, often presented in literature and film as a cautionary tale about the potential consequences of certain political, social, or environmental trends.
 #### [Return to Q Index](#section1)
 
-## <a name="question11"></a>Q11:   Please give me an example including "romantic","Mr.yang"，"be obsessed with", “miss liu”, "with respect to", "underneath the moonlight","fevered feeling","flowers","bashful".[story-style
+## <a name="question11"></a>Q11:   Please give me an example including "romantic","Mr.yang"，"be obsessed with", “miss liu”, "with respect to", "underneath the moonlight","fevered feeling","flowers","bashful".{style
 
 #### A11: 
    In a [romantic] tale of [fresh flowers] and love, [Mr. Yang] found himself [obsessed with] [Miss Liu]. His heart raced with [fevered feelings] [with respect to] her beauty and grace. As they walked [underneath the moonlight], he gifted her a bouquet of [flowers], the perfect expression of his [bashful] admiration.
@@ -210,7 +210,7 @@ EXTRA WORDS or PHRASES:
 [fresh flowers]: Recently picked or purchased flowers that are still vibrant, colorful, and fragrant, often used to symbolize love, affection, or appreciation.
 #### [Return to Q Index](#section1)
 
-## <a name="question12"></a>Q12:   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，"mull over" "with respect to"，"sign a slip".[story-style
+## <a name="question12"></a>Q12:   Please give me an example including "charge late fees","be a crapshoot","take-out menus","to order in"，"mull over" "with respect to"，"sign a slip".{style
 
 #### A12: 
    Opting to [order in], John [mulled over] various [take-out menus], knowing that choosing the right meal would [be a crapshoot]. [With respect to] the [late fees] he'd been charged at the local rental store, he sarcastically thought, "At least they won't [charge late fees] if I forget to [sign a slip] for my food."
@@ -240,7 +240,7 @@ EXTRA WORDS or PHRASES:
 [sarcasm]: A form of verbal irony, where the intended meaning of a statement is opposite or very different from its literal or usual meaning. Sarcasm is often used to express contempt, ridicule, or frustration and is typically characterized by a mocking or derisive tone.
 #### [Return to Q Index](#section1)
 
-## <a name="question13"></a>Q13:   Please give me an example including"be a crapshoot","sign a slip","mull over","debit card","up and coming".[story-style
+## <a name="question13"></a>Q13:   Please give me an example including"be a crapshoot","sign a slip","mull over","debit card","up and coming".{style
 
 #### A13: 
    Amidst the uncertainty of the [up and coming] election, the stock market's performance seemed to [be a crapshoot]. Investors [mulled over] their options, some choosing to [sign a slip] to authorize transactions using their [debit cards], despite the inherent risks involved.
@@ -264,7 +264,7 @@ EXTRA WORDS or PHRASES:
 [authorize transactions]: To give official permission for a financial operation, such as a purchase or transfer of funds, to take place. Authorization is often required to protect the account holder's interests and ensure that transactions are legitimate and properly recorded.
 #### [Return to Q Index](#section1)
 
-## <a name="question14"></a>Q14:   Please give me an example including"be a crapshoot","sign a slip","mull over","debit card","up and coming","veg out","idly","take-out menus".[story-style
+## <a name="question14"></a>Q14:   Please give me an example including"be a crapshoot","sign a slip","mull over","debit card","up and coming","veg out","idly","take-out menus".{style
 
 #### A14: 
    As the [up and coming] athlete faced a doping scandal, his sponsorship deals seemed to [be a crapshoot]. To clear his mind, he would [veg out] (relax) [idly], [mulling over] whether to [sign a slip] authorizing payments using his [debit card] for the latest sports gear or peruse [take-out menus] to indulge in comfort food.
@@ -290,7 +290,7 @@ EXPLANATION:
 [take-out menus]: Lists of food items available for delivery or pickup from a restaurant or food establishment.
 #### [Return to Q Index](#section1)
 
-## <a name="question15"></a>Q15:   Please give me an example including,"sign a slip",,"debit card","veg out","get over a hectic week".[story-style
+## <a name="question15"></a>Q15:   Please give me an example including,"sign a slip",,"debit card","veg out","get over a hectic week".{style
 
 #### A15: 
    After [getting over a hectic week] filled with intense sports training, the enthusiastic athlete decided to [veg out] (relax) and treat himself to new sports gear. He happily [signed a slip] to authorize the payment using his [debit card], looking forward to wearing his new equipment during the next training session.
@@ -308,7 +308,7 @@ EXPLANATION:
 [get over a hectic week]: To recover or find relief from a busy, stressful, or exhausting period of time, such as a week filled with many activities or obligations.
 #### [Return to Q Index](#section1)
 
-## <a name="question16"></a>Q16:   Please give me an example including,"dedicated to","be commited to", "be intended for", "accessory", "up and coming", "perseverance".[story-style
+## <a name="question16"></a>Q16:   Please give me an example including,"dedicated to","be commited to", "be intended for", "accessory", "up and coming", "perseverance".{style
 
 #### A16: 
    In the world of fashion, an [up and coming] designer, dedicated to (devoted to) creating unique [accessories], is driven by unwavering [perseverance]. As a result, they have managed to establish a brand that is not only [committed to] (pledged to) quality craftsmanship but also [intended for] those who share their passion for self-expression and individuality. Their story serves as an inspiration for aspiring designers, proving that with dedication, commitment, and perseverance, one can transform their creative vision into a successful and meaningful reality.
@@ -330,7 +330,7 @@ EXPLANATION:
 [perseverance]: Steadfastness in doing something despite difficulty or delay in achieving success; persistence and determination in the face of challenges or obstacles.
 #### [Return to Q Index](#section1)
 
-## <a name="question17"></a>Q17:   Please give me an example including,"dedicated to",", "up and coming", "foster","music genra","there's no agreed upon".[story-style
+## <a name="question17"></a>Q17:   Please give me an example including,"dedicated to",", "up and coming", "foster","music genra","there's no agreed upon".{style
 
 #### A17: 
    In the secluded town, an [up and coming] musician, [dedicated to] exploring a sinister [music genre], sought to [foster] an eerie atmosphere where terror reigned supreme. As he crafted ominous melodies, [there was no agreed upon] (consensus on) the origins of his macabre compositions, which led many to believe that malevolent forces might be guiding his hand.
@@ -345,12 +345,12 @@ EXPLANATION:
 
 [foster]: Encourage or promote the development of something, typically something regarded as good.
 
-[music genre]: A category of artistic composition, as in music, characterized by similarities in form, story-style, or subject matter.
+[music genre]: A category of artistic composition, as in music, characterized by similarities in form, style, or subject matter.
 
 [there's no agreed upon]: No consensus on a particular subject or matter, implying that opinions or beliefs may differ significantly among individuals or groups.
 #### [Return to Q Index](#section1)
 
-## <a name="question18"></a>Q18:   Please give me an example including,"dedicated to",", "up and coming", "such a high premium is placed on".[story-style
+## <a name="question18"></a>Q18:   Please give me an example including,"dedicated to",", "up and coming", "such a high premium is placed on".{style
 
 #### A18: 
    In today's competitive academic landscape, [up and coming] educators are [dedicated to] finding innovative teaching methods that engage students and facilitate learning. However, [such a high premium is placed on] (emphasis on) standardized test scores that it often stifles creative approaches and fails to address the root causes of educational inequity.
@@ -366,7 +366,7 @@ EXPLANATION:
 [such a high premium is placed on]: To place great importance or emphasis on something, often implying that it may have negative consequences or drawbacks.
 #### [Return to Q Index](#section1)
 
-## <a name="question19"></a>Q19:   Please give me an example including,"be commited to", "be placed on" which means to emphasize, "such a high premium".[story-style
+## <a name="question19"></a>Q19:   Please give me an example including,"be commited to", "be placed on" which means to emphasize, "such a high premium".{style
 
 #### A19: 
    In an era where [such a high premium] is [placed on] (emphasized) technological advancements, corporations must [be committed to] not only developing cutting-edge innovations but also addressing the potential negative impacts on society and the environment, to ensure sustainable progress.
@@ -382,7 +382,7 @@ EXPLANATION:
 [such a high premium]: A reference to the great importance or value attached to something, often implying that it may have negative consequences or drawbacks.
 #### [Return to Q Index](#section1)
 
-## <a name="question20"></a>Q20:   Please give me an example including,"dedicated to","up and coming", "hover around", "be placed on" which means to emphasize, "such a high premium".[story-style
+## <a name="question20"></a>Q20:   Please give me an example including,"dedicated to","up and coming", "hover around", "be placed on" which means to emphasize, "such a high premium".{style
 
 #### A20: 
    In a competitive academic environment where [such a high premium] is [placed on] (emphasized) high test scores, [up and coming] educational institutions are increasingly [dedicated to] developing innovative teaching methods that [hover around] (focus on) the students' overall development, rather than merely relying on traditional metrics of success.
@@ -402,7 +402,7 @@ EXPLANATION:
 [such a high premium]: A reference to the great importance or value attached to something, often implying that it may have negative consequences or drawbacks.
 #### [Return to Q Index](#section1)
 
-## <a name="question21"></a>Q21:   Please give me an example including,"stand in strong contrast to","up and coming", "hover around", "be placed on" which means to emphasize, "such a high premium", "be motivated by desire to".[story-style
+## <a name="question21"></a>Q21:   Please give me an example including,"stand in strong contrast to","up and coming", "hover around", "be placed on" which means to emphasize, "such a high premium", "be motivated by desire to".{style
 
 #### A21: 
    [Up and coming] educational institutions [stand in strong contrast to] traditional schools, as they [hover around] (focus on) fostering creativity and critical thinking in students. These modern schools [place] a high premium on developing well-rounded individuals, rather than merely emphasizing test scores. Their approach is [motivated by the desire to] create a more balanced and holistic learning environment.
@@ -422,10 +422,10 @@ EXPLANATION:
 [such a high premium]: A reference to the great importance or value attached to something, often implying that it may have negative consequences or drawbacks.
 #### [Return to Q Index](#section1)
 
-## <a name="question22"></a>Q22:   Please give me an example including,"stand in strong contrast to", "hover around", "be placed on" which means to emphasize, "such a high premium", "be motivated by desire to".[story-style
+## <a name="question22"></a>Q22:   Please give me an example including,"stand in strong contrast to", "hover around", "be placed on" which means to emphasize, "such a high premium", "be motivated by desire to".{style
 
 #### A22: 
-   The policies of the eccentric government [stand in strong contrast to] conventional political strategies, as they [hover around] (focus on) unconventional ideas and priorities. [Such a high premium] is [placed on] (emphasized) these unorthodox approaches, driven by the belief that they will yield surprising results. The leaders are [motivated by the desire to] challenge traditional norms and explore new possibilities in governance.
+    The policies of the eccentric government [stand in strong contrast to] conventional political strategies, as they [hover around] (focus on) unconventional ideas and priorities. [Such a high premium] is [placed on] (emphasized) these unorthodox approaches, driven by the belief that they will yield surprising results. The leaders are [motivated by the desire to] challenge traditional norms and explore new possibilities in governance.
 
 中文: 古怪政府的政策[与]传统政治策略[形成鲜明对比]，因为它们[围绕]（关注）非常规的观念和优先事项。[如此高的价值]被[放在]（强调）这些非正统的方法上，由相信这些方法将产生惊人结果的信念所驱动。领导人[由渴望]挑战传统规范和探索治理新可能性而行动。
 
