@@ -99,19 +99,19 @@ class Organize:
             if line.startswith('Q') and foreline1 == '\n' and foreline2 == '\n':
                 digits = line.split('Q')[1].split(':')[0]  # 获取Q后面的数字, 一般形式为Q+数字+;+空格+问题内容
                 # 去除开头的Q/A+数字+;
-                line = line.split(':')[1]
+                line = line.split(':', 1)[1].strip()
                 # 在line的开头加三个空格，作为缩进
                 line = '  ' + line
                 # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
                 if '{' in line:
-                    line = line.replace('{', ' ')
+                    line = line.replace('{', '%')
                 if '}' in line:
-                    line = line.replace('}', '.')
+                    line = line.replace('}', '%')
                 if ':' in line:
-                    line = line.replace(':', ' ')
+                    line = line.replace(':', '. ')
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
                 if 'style' in line:
-                    line = line.replace('style', 'Storys')
+                    line = line.replace('style', 'Story-style')
 
                 if backline1.startswith('A'):  # 说明此时的line是问题行的最后一行
                     # 说明此时的line是问题行的最后一行
@@ -136,13 +136,15 @@ class Organize:
                 # 在line的开头加三个空格，作为缩进
                 line = '  ' + line
                 # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
-
                 if '{' in line:
-                    line = line.replace('{', ' ')
+                    line = line.replace('{', '%')
                 if '}' in line:
-                    line = line.replace('}', '.')
+                    line = line.replace('}', '%')
                 if ':' in line:
-                    line = line.replace(':', ' ')
+                    line = line.replace(':', '. ')
+                # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
+                if 'style' in line:
+                    line = line.replace('style', 'Story-style')
 
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
                 if 'style' in line:
@@ -166,14 +168,14 @@ class Organize:
             else:
                 # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
                 if '{' in line:
-                    line = line.replace('{', ' ')
+                    line = line.replace('{', '%')
                 if '}' in line:
-                    line = line.replace('}', '.')
+                    line = line.replace('}', '%')
                 if ':' in line:
-                    line = line.replace(':', ' ')
+                    line = line.replace(':', '. ')
                 # 检测line中是否含有'style', 如果有，那么就将其替换为'story-style'
                 if 'style' in line:
-                    line = line.replace('style', 'story-style')
+                    line = line.replace('style', 'Story-style')
                 if _is_Qline:
                     # 如果backline1是以A+数字开头的，则说明该行为问题行的最后一行
                     if backline1.startswith('A'):   # 说明此时的line是问题行的最后一行
