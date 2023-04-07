@@ -142,6 +142,8 @@ class Organize:
                     line = line.replace('}', '%')
                 if ':' in line:
                     line = line.replace(':', '. ')
+                if '](' in line:
+                    line = line.replace('](', '] (')
 
                 if backline2.startswith('\n') and backline1.startswith('\n'):   # 如果后面两行都是空行, 那么就是prompt的第一行，也是最后一行
                     # 把这行加入到subprompt列表中
@@ -168,6 +170,11 @@ class Organize:
                     continue
 
             if in_prompt:   # 如果在prompt中，那么就把prompt中的行加入到subprompt列表中
+                # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
+                if ':' in line:
+                    line = line.replace(':', '. ')
+                if '](' in line:
+                    line = line.replace('](', '] (')
                 if backline2.startswith('\n') and backline1.startswith('\n'):   # 若后面联行是空行，说明这行是这个prompt的最后一行
                     # 把这行加入到subprompt列表中
                     subprompt.append(line)
