@@ -16,7 +16,7 @@ The document is structured as follows: Section 1 provides a summary of the quest
    I want you to summarize some advance and wide-used in IELTS words which is worth to learn from the article as an intermidiate student.
 
 
-## 3. Article and Multiple-choice Questions
+## 3. Q
 
 ### Article1: 
    America and China agree on very little these days. Yet on the subject of Taiwan, at least in one regard, they are in total harmony. The status quo surrounding the self-governing island, which China claims and whose thriving democracy America supports, is changing in dangerous ways, say officials on both sides. War does not look imminent, but the uneasy peace that has held for more than six decades is fragile (see China section).

@@ -438,7 +438,7 @@ class ExceptAIandEnglishSentenceMaker:
                         f.write(self.Prompts[i][j])  # 写入提示内容
                     f.write('\n\n')
 
-                f.write('## 3. Q\n\n')
+                f.write('## 3. Article and Multiple-choice Questions\n\n')
 
                 # 写入article
                 for i in range(len(self.Articles)):
