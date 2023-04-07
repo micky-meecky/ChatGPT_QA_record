@@ -4,6 +4,8 @@ import argparse
 import shutil
 import time
 import datetime
+import ExtendFunc as ef
+
 
 class Organize:
     def __init__(self, config):
@@ -14,16 +16,17 @@ class Organize:
         self.readme_path = config.readme_path
         self.readme_flag = config.readme_flag
         self.task_type = config.task_type
+        self.history_path = config.history_path
 
         self.Qnum = 0
         self.Anum = 0
         self.QAnum = 0
         self.Promptnum = 0
-        self.history_path = './history/'
         self.QLines = []
         self.ALines = []
         self.Prompts = []
         self.QA = []
+        self.Articlenum = 0
 
 
 
@@ -45,6 +48,7 @@ class Organize:
         self.ReadFile()
         digits = 0
         p_digits = 0
+        Articledigits = 0
         for line in self.lines:
             # 如果改行开头是以Q+数字开头的，并它的前两行是空行，那么该行就是问题行，问题数加1
             foreline1 = self.lines[self.lines.index(line) - 1]
@@ -86,6 +90,10 @@ class Organize:
             print('Prompt数和Prompt后面的数字不相等，请检查！')
 
 
+
+
+
+
     # 创建名为name的文件夹
     def CreateFolder(self, name):
         # 判断history_path是否存在，如果不存在，则创建
@@ -105,12 +113,17 @@ class Organize:
         subQ = []  # 用于存储问题i中的行
         subA = []  # 用于存储回答i中的行
         subprompt = []  # 用于存储prompt中的行
+        Article = []  # 用于存储Article中的行
+        MultiChoice = []  # 用于存储MultiChoice中的行
+
         idx = 0  # 用于记录当前行的索引
         q_idx = 0  # 用于记录当前问题的索引
         a_idx = 0  # 用于记录当前回答的索引
         prompt_idx = 0  # 用于记录当前prompt的索引
+        Article_idx = 0  # 用于记录当前Article的索引
         digits = 0  # 用于记录当前行的数字
         in_prompt = False  # 用于判断当前行是不是在prompt中
+
 
         # 首先读取TXT文件内容并按照问题和回答的形式分割，将其转换为一个嵌套列表（list of lists）的形式，每个子列表包含一个问题和其对应的回答。
         # 不需要调用ReadFile()函数，因为TallyUpNum()函数中已经调用过了。
@@ -381,40 +394,6 @@ class Organize:
                         '\n\n')
                 # 写入一些必要的提示词，给CHatGPT使用
                 f.write('## 2. Prompts\n\n')
-                # f.write('   The following prompts are used to generate the questions and answers correctly. \n\n')
-                # f.write('   **Prompt 1: **' )
-                # f.write(' I want you to act an english sentence maker. But there are some specification have to '
-                #         'set forth. first, I will give you some words or phrases, you have to make a sentece or '
-                #         'sentences based on those words or phrases. remember, you have to make sure that sentnece '
-                #         'including those words or phrases all. Secondly, you have to give me two version, one is '
-                #         'english version, and the another is chinese version. Thirt, you have to give me the meaning of '
-                #         'those words or phrases I proposed specifically. Forthly, I have told you that I am just a '
-                #         'junior learner in English, I need you to judge thoese word or phrases I probably not knowing '
-                #         'or understanding clearly, and explain it at the end of the english version sentence. '
-                #         'Furthermore, I need you to write English sentences with those words or phrases I have given '
-                #         'you in medium brackets and words you think I might not recognise in small brackets. If you '
-                #         'understand it, pls answer it with just a \" I got it\".\n')
-                # f.write('   **Prompt 2: **' )
-                # f.write(' So next, I will give you some simple examples.\n')
-                # f.write('  example 1:' )
-                # f.write(' I says:" Please give me an example including "have to","a lot of","professors".'
-                #         'You answers:" ENGLISH: I [have to] find [a lot of] [professors] to get them agreement of '
-                #         'protecting enviroment from those (jerks). \n')
-                # f.write('中文: 我[必须]找到[很多][教授]，让他们同意保护环境不受那些（混蛋）影响。\n')
-                # f.write('EXPLAINATION: [have to]: "Have to" is a modal verb that is used to indicate that something is'
-                #         ' necessary or required. It is often used to express obligation, duty, or compulsion. For '
-                #         'example, "I have to go to work today," means that going to work is necessary or required for '
-                #         'some reason, such as to earn a living or to fulfill a contractual obligation. "Have to" can '
-                #         'also be used to express a strong recommendation or advice. For example, \"You have to try the '
-                #         'seafood here - it\'s amazing" means that it is strongly recommended that you try the seafood" '
-                #         '" because it is very good.\n' )
-                # f.write('  EXTRA WORDS or PHRASE:(jerks):"Jerks" is a colloquial term that is often used to describe a '
-                #         'person who is rude, unpleasant, or behaves in an obnoxious manner. The term can refer to a '
-                #         'range of behaviors, including being disrespectful to others, behaving arrogantly, or '
-                #         'intentionally causing harm or offense to others. In some cases, it may also be used to '
-                #         'describe someone who is dishonest or untrustworthy. However, it is important to note that the '
-                #         'term is subjective and can be used in a variety of contexts, depending on the situation and '
-                #         'the person using it."\n If you understand it, pls answer it with just a " I got it".' )
                 for i in range(len(self.Prompts)):
                     f.write('### Promp' + str(i + 1) + ': \n')
                     for j in range(len(self.Prompts[i])):
@@ -457,22 +436,32 @@ class Organize:
 # 设置参数parser
 def parse_args():
     parser = argparse.ArgumentParser(description="organize")
-    parser.add_argument('--path', type=str, default='./english_sentence_maker.txt')
+    parser.add_argument('--path', type=str, default='./english_reading.txt')
     parser.add_argument('--TallyUpNum', type=bool, default=True, help='统计问题和回答数吗？')
-    parser.add_argument('--Md_path', type=str, default='./english_sentence_maker.md', help='self_attention.md文件路径')
+    parser.add_argument('--Md_path', type=str, default='./english_reading.md', help='self_attention.md文件路径')
     parser.add_argument('--readme_path', type=str, default='./readme.md', help='readme.md文件路径')
     parser.add_argument('--readme_flag', type=bool, default=False, help='是否将md文件复制到readme.md中？')
-    parser.add_argument('--task_type', type=str, default='english_sentence_maker', help='English_sentence_maker '
+    parser.add_argument('--task_type', type=str, default='English_reading', help='English_sentence_maker '
                         ' English_reading, AI, English_words_learning, ComputerScience')
+    parser.add_argument('--history_path', type=str, default='./history/', help='history文件夹路径')
     return parser.parse_args()
 
 
 # __main__
 if __name__ == '__main__':
     args = parse_args()
-    organize = Organize(args)
-    # organize.TallyUpNum()
-    organize.WriteToMd()
-    print('问题数为：', organize.Qnum)
-    print('回答数为：', organize.Anum)
-    print('prompt数为：', organize.Promptnum)
+
+    # organize = Organize(args)
+    # # organize.TallyUpNum()
+    # organize.WriteToMd()
+    # print('问题数为：', organize.Qnum)
+    # print('回答数为：', organize.Anum)
+    # print('prompt数为：', organize.Promptnum)
+
+    Engreading = ef.ExceptAIandEnglishSentenceMaker(args)
+    # Engreading.TallyUpNum()
+    Engreading.WriteToMd()
+    # print('prompt数为：', Engreading.Promptnum)
+    # print('Article数为：', Engreading.Articlenum)
+    # print('问题数为：', Engreading.QLinesnum)
+
