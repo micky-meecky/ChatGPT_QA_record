@@ -4,6 +4,7 @@ import shutil
 import time
 import datetime
 
+
 class ExceptAIandEnglishSentenceMaker:
     def __init__(self, config):
         self.lines = None
@@ -30,7 +31,7 @@ class ExceptAIandEnglishSentenceMaker:
 
         self.lines_shape = 0
 
- # 读取文件
+    # 读取文件
     def ReadFile(self):
         self.file = open(self.path, 'r')
         # 获取文件内容的编码格式类型
@@ -44,8 +45,7 @@ class ExceptAIandEnglishSentenceMaker:
         # q: lines是什么类型？ a: list类型。
         self.file.close()
 
-
-# 统计问题回答数
+    # 统计问题回答数
     def TallyUpNum(self):
         self.ReadFile()
         Articledigits = 0
@@ -88,13 +88,11 @@ class ExceptAIandEnglishSentenceMaker:
                     # 将数字转换为int类型
                     Qdigits = int(Qdigits)
 
-
                 if line.startswith('Words') and foreline1 == '\n' and foreline2 == '\n':
                     self.WordsLinesnum += 1
 
                 if line.startswith('Phrases') and foreline1 == '\n' and foreline2 == '\n':
                     self.PhrasesLinesnum += 1
-
 
         # 打印文本内容中的Article数
         print('Article\'s digits数为：', Articledigits)
@@ -123,12 +121,7 @@ class ExceptAIandEnglishSentenceMaker:
         # 打印文本内容中的Phrases数
         print('Phrases\'s digits数为：', self.PhrasesLinesnum)
 
-
-
-
-
-
-# 创建名为name的文件夹
+    # 创建名为name的文件夹
     def CreateFolder(self, name):
         # 判断history_path是否存在，如果不存在，则创建
         if not os.path.exists(self.history_path):
@@ -138,11 +131,11 @@ class ExceptAIandEnglishSentenceMaker:
         if not os.path.exists(name):
             os.makedirs(name)
 
-# 将这些内容写入一个md文件中
+    # 将这些内容写入一个md文件中
     def EmbeddingList(self):
         # 先执行一次TallyUpNum()函数
         self.TallyUpNum()
-        _is_Qline = False   # 用于判断当前行是不是问题行
+        _is_Qline = False  # 用于判断当前行是不是问题行
         subQ = []  # 用于存储问题i中的行
         subprompt = []  # 用于存储prompt中的行
         subarticle = []  # 用于存储Article中的行
@@ -193,7 +186,6 @@ class ExceptAIandEnglishSentenceMaker:
                 backline2 = ' '
                 backline3 = ' '
 
-
             idx += 1
 
             # 开始检测prompt行
@@ -214,10 +206,10 @@ class ExceptAIandEnglishSentenceMaker:
                 if '](' in line:
                     line = line.replace('](', '] (')
 
-                if backline2.startswith('\n') and backline1.startswith('\n'):   # 如果后面两行都是空行, 那么就是prompt的第一行，也是最后一行
+                if backline2.startswith('\n') and backline1.startswith('\n'):  # 如果后面两行都是空行, 那么就是prompt的第一行，也是最后一行
                     # 把这行加入到subprompt列表中
                     subprompt.append(line)
-                    in_prompt = False   # 退出prompt中
+                    in_prompt = False  # 退出prompt中
                     if backline3.startswith('Q'):
                         # 如果下下下行是以Q+数字开头的，那么就把subprompt列表中的内容加入到subQ列表中
                         self.Prompts.append(subprompt)
@@ -235,19 +227,19 @@ class ExceptAIandEnglishSentenceMaker:
                     # 如果后面两行有任意一行不是空行，说明这行不是prompt的最后一行
                     # 把这行加入到subprompt列表中
                     subprompt.append(line)
-                    in_prompt = True    # 设置为在prompt中
+                    in_prompt = True  # 设置为在prompt中
                     continue
 
-            if in_prompt:   # 如果在prompt中，那么就把prompt中的行加入到subprompt列表中
+            if in_prompt:  # 如果在prompt中，那么就把prompt中的行加入到subprompt列表中
                 # 检测line中是否含有'{}', 如果有，那么就将其替换为'[]'
                 if ':' in line:
                     line = line.replace(':', '. ')
                 if '](' in line:
                     line = line.replace('](', '] (')
-                if backline2.startswith('\n') and backline1.startswith('\n'):   # 若后面联行是空行，说明这行是这个prompt的最后一行
+                if backline2.startswith('\n') and backline1.startswith('\n'):  # 若后面联行是空行，说明这行是这个prompt的最后一行
                     # 把这行加入到subprompt列表中
                     subprompt.append(line)
-                    in_prompt = False   # 退出prompt中
+                    in_prompt = False  # 退出prompt中
                     # 如果下下下行是以Q+数字开头的，那么就把subprompt列表中的内容加入到subQ列表中
                     self.Prompts.append(subprompt)
                     # 清空subprompt列表
@@ -277,10 +269,10 @@ class ExceptAIandEnglishSentenceMaker:
             if in_article:  # 如果在article中，那么就把article中的行加入到subarticle列表中
                 if '](' in line:
                     line = line.replace('](', '] (')
-                if backline2.startswith('\n') and backline1.startswith('\n'):   # 若后面联行是空行，说明这行是这个article的最后一行
+                if backline2.startswith('\n') and backline1.startswith('\n'):  # 若后面联行是空行，说明这行是这个article的最后一行
                     # 把这行加入到subarticle列表中
                     subarticle.append(line)
-                    in_article = False   # 退出article中
+                    in_article = False  # 退出article中
                     self.Articles.append(subarticle)
                     # 清空subarticle列表
                     subarticle = []
@@ -312,10 +304,10 @@ class ExceptAIandEnglishSentenceMaker:
             if in_Q:  # 如果在问题中，那么就把问题中的行加入到subQ列表中
                 if ':' in line:
                     line = line.replace(':', '. ')
-                if backline2.startswith('\n') and backline1.startswith('\n'):   # 若后面联行是空行，说明这行是这个问题的最后一行
+                if backline2.startswith('\n') and backline1.startswith('\n'):  # 若后面联行是空行，说明这行是这个问题的最后一行
                     # 把这行加入到subQ列表中
                     subQ.append(line)
-                    in_Q = False   # 退出问题中
+                    in_Q = False  # 退出问题中
                     self.QLines.append(subQ)
                     # 清空subQ列表
                     subQ = []
@@ -340,14 +332,13 @@ class ExceptAIandEnglishSentenceMaker:
                 in_words = True  # 设置为在words中
                 words_idx += 1  # words索引加1
 
-
             if in_words:  # 如果在words中，那么就把words中的行加入到subwords列表中
                 if ':' in line:
                     line = line.replace(':', '. ')
-                if backline2.startswith('\n') and backline1.startswith('\n'):   # 若后面联行是空行，说明这行是这个words的最后一行
+                if backline2.startswith('\n') and backline1.startswith('\n'):  # 若后面联行是空行，说明这行是这个words的最后一行
                     # 把这行加入到subwords列表中
                     subwords.append(line)
-                    in_words = False   # 退出words中
+                    in_words = False  # 退出words中
                     self.WordsLines.append(subwords)
                     # 清空subwords列表
                     subwords = []
@@ -375,10 +366,10 @@ class ExceptAIandEnglishSentenceMaker:
             if in_phrases:  # 如果在phrases中，那么就把phrases中的行加入到subphrases列表中
                 if ':' in line:
                     line = line.replace(':', '. ')
-                if backline2.startswith('\n') and backline1.startswith('\n'):   # 若后面联行是空行，说明这行是这个phrases的最后一行
+                if backline2.startswith('\n') and backline1.startswith('\n'):  # 若后面联行是空行，说明这行是这个phrases的最后一行
                     # 把这行加入到subphrases列表中
                     subphrases.append(line)
-                    in_phrases = False   # 退出phrases中
+                    in_phrases = False  # 退出phrases中
                     self.PhrasesLines.append(subphrases)
                     # 清空subphrases列表
                     subphrases = []
@@ -401,7 +392,7 @@ class ExceptAIandEnglishSentenceMaker:
             if self.task_type == 'English_reading':
                 # 创建一个新的md文件
                 with open(self.Md_path, 'w', encoding='utf-8') as f:
-                # 向文件中写入标题
+                    # 向文件中写入标题
                     f.write('# English Reading\n\n')
                     # 写入小标题
                     f.write('## 1. Introduction\n\n')
@@ -456,8 +447,6 @@ class ExceptAIandEnglishSentenceMaker:
                         f.write(self.Articles[i][j])
                     f.write('\n\n')
 
-
-
                 for i in range(len(self.QLines)):
                     # 写入问题
                     f.write('### Q' + str(i + 1) + ': \n')
@@ -483,16 +472,3 @@ class ExceptAIandEnglishSentenceMaker:
                         f.write(self.PhrasesLines[i][j])
                         f.write('\n')
                     f.write('\n\n')
-
-
-
-
-
-
-
-
-
-
-
-
-
